@@ -1,17 +1,20 @@
+#ifndef MAIN_H
+#define MAIN_H
+
 #include <stdarg.h>
-#ifndef MAIN_H__
-#define MAIN_H__
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * formats - structure to hold the different symbols and formats to check for.
  * @type: type to check of symbol
  * @symbol: the symbol value
  * @f: function pointer to hold functions that work on different symbols
-*/
+ */
 typedef struct formats
 {
-    char *type;
-    char *symbol;
+	char *type;
+	char *symbol;
 } type_format;
 
 int _putchar(int ch);
