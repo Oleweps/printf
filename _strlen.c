@@ -8,15 +8,15 @@
 
 int _strlen(const char *s)
 {
-    unsigned int x, len = 0;
+	unsigned int x, len = 0;
 
-    if (s)
-    {
-        for (x = 0; s[x] != '\0';  x++)
-        {
-            len += 1;
-        }
-    }
+	if (s)
+	{
+		for (x = 0; s[x] != '\0';  x++)
+		{
+			len += 1;
+		}
+	}
 
-    return (len);
+	return (len);
 }
