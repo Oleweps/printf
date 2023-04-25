@@ -1,8 +1,15 @@
 #include <unistd.h>
+#include <stdio.h>
 
-int _putchar(char ch)
+#define START 1
+
+/**
+ * _putchar - function to print single character in terminal
+*/
+
+int _putchar(int ch)
 {
-    char c = (char)ch;  
+    char c = (char)ch;
 
-    return write(1, &ch, 1);
+    return write(START, &c, 1);
 }

@@ -6,13 +6,16 @@
  * Return: length of the string
 */
 
-int _strlen(char *s)
+int _strlen(const char *s)
 {
-    unsigned int x, len;
+    unsigned int x, len = 0;
 
-    for (x = 0; s[x] != '\0';  x++)
+    if (s)
     {
-        len += 1;
+        for (x = 0; s[x] != '\0';  x++)
+        {
+            len += 1;
+        }
     }
 
     return (len);

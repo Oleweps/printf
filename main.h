@@ -2,13 +2,6 @@
 #ifndef MAIN_H__
 #define MAIN_H__
 
-int _putchar(char ch);
-int _strlen(char *s);
-int _printf(const char *format, ...);
-void print_string(char *);
-void print_int(int num);
-void print_float(float num);
-
 /**
  * formats - structure to hold the different symbols and formats to check for.
  * @type: type to check of symbol
@@ -19,7 +12,19 @@ typedef struct formats
 {
     char *type;
     char *symbol;
-    void (*f)(const int len, ...);
 } type_format;
+
+int _putchar(int ch);
+int _strlen(const char *s);
+int _printf(const char *format, ...);
+int print_string(char *s);
+int print_integer(long int num);
+double convert_negative_to_positive(double n);
+double reverse_number(double n);
+char *_strcpy(char *dest, const char *src);
+char *_memset(char *s, char b, unsigned int n);
+int print_character(int idx, char *s);
+int print_values_for_symbols(type_format *symbols, char *symbol, va_list args);
+unsigned int convert_to_binary(unsigned int num);
 
 #endif
