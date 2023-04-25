@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * _strcpy - function to print out a string
+ * *_strcpy - function to print out a string
  * @src: the string array
  * @dest: the string array
- * Return: pointer to new string
+ * Return: pointer to new string dest
 */
 
 char *_strcpy(char *dest, const char *src)
