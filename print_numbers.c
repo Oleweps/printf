@@ -26,6 +26,11 @@ int print_integer(long int num)
 			_putchar(num + '0');
 			return (1);
 		}
+		if (num < 0)
+		{
+			_putchar('-');
+			len++;
+		}
 		rev_n = reverse_number(num);
 		/** * print the number after reversing */
 		x = 0;
@@ -87,7 +92,6 @@ long int reverse_number(long int n)
 long int convert_negative_to_positive(long int n)
 {
 	n *= -1;
-	_putchar('-');
 
 	return (n);
 }
