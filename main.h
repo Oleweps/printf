@@ -6,11 +6,12 @@
 #include <stdio.h>
 
 /**
- * formats - structure to hold the different symbols and formats to check for.
+ * struct formats - structure to hold the,
+ * different symbols and formats to check for.
  * @type: type to check of symbol
  * @symbol: the symbol value
- * @f: function pointer to hold functions that work on different symbols
  */
+
 typedef struct formats
 {
 	char *type;
