@@ -5,11 +5,13 @@
 
 /**
  * _putchar - function to print single character in terminal
+ * @ch: character to be printed
+ * Return: the return value of wite function
 */
 
 int _putchar(int ch)
 {
-    char c = (char)ch;
+	char c = (char)ch;
 
-    return write(START, &c, 1);
+	return (write(START, &c, 1));
 }
