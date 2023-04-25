@@ -19,8 +19,13 @@ int print_integer(long int num)
 	long int x, len = 0, tmp = num;
 	long int rev_n = 0;
 
-	if (num >= INT_MIN || num <= INT_MAX)
+	if (num >= INT_MIN && num <= INT_MAX)
 	{
+		if (num == 0)
+		{
+			_putchar(num + '0');
+			return (1);
+		}
 		rev_n = reverse_number(num);
 		/** * print the number after reversing */
 		x = 0;
@@ -43,7 +48,6 @@ int print_integer(long int num)
 		}
 		return (len);
 	}
-
 	return (0);
 }
 
