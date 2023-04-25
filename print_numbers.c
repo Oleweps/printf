@@ -82,14 +82,7 @@ long int reverse_number(long int n)
 
 long int convert_negative_to_positive(long int n)
 {
-	if (n == INT_MIN)
-	{
-		n = (n * -1) - 1;
-	}
-	else
-	{
-		n *= -1;
-	}
+	n *= -1;
 	_putchar('-');
 
 	return (n);
