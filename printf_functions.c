@@ -45,6 +45,11 @@ int print_character(int idx, char *s)
 	check_chars_2 = (s[idx] == 'd' || s[idx] == 'b' || s[idx] == 'i');
 	if (idx > 0)
 	{
+		if (s[idx - 1] == '%' && (!check_chars_1 && !check_chars_2))
+		{
+			_putchar('%');
+			count = 1;
+		}
 		/** check so that we don't print any of the symbols */
 		if (!(s[idx - 1] == '%' && (check_chars_1 || check_chars_2)))
 		{
