@@ -126,7 +126,7 @@ int print_values_for_symbols(type_format *symbols, char *symbol, va_list args)
 			}
 			if (strcmp(symbols[j].type, "integer") == 0)
 			{
-				count += print_integer(va_arg(args, int));
+				count += print_number(va_arg(args, int));
 			}
 			if (strcmp(symbols[j].type, "binary") == 0)
 			{
