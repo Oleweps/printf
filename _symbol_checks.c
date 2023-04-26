@@ -130,7 +130,7 @@ int print_values_for_symbols(type_format *symbols, char *symbol, va_list args)
 			}
 			if (strcmp(symbols[j].type, "binary") == 0)
 			{
-				count += convert_to_binary(va_arg(args, unsigned int));
+				count += _convert_to_binary(va_arg(args, unsigned int));
 			}
 			break;
 		}
