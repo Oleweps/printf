@@ -110,10 +110,28 @@ int print_values_for_symbols(type_format *symbols, char *symbol, va_list args)
 	{
 		if (strcmp(symbol, symbols[j].symbol) == 0)
 		{
-			count += check_alphabets(symbols[j].type, args);
-			count += check_percent(symbols[j].type);
-			count += check_numbers(symbols[j].type, args);
-			count += check_other_symbols(symbols[j].type, symbols[j].symbol, args);
+			if (strcmp(symbols[j].type, "char") == 0)
+			{
+				_putchar(va_arg(args, int));
+				count += 1;
+			}
+			if (strcmp(symbols[j].type, "string") == 0)
+			{
+				count += print_string(va_arg(args, char *));
+			}
+			if (strcmp(symbols[j].type, "percent") == 0)
+			{
+				_putchar('%');
+				count += 1;
+			}
+			if (strcmp(symbols[j].type, "integer") == 0)
+			{
+				count += print_integer(va_arg(args, int));
+			}
+			if (strcmp(symbols[j].type, "binary") == 0)
+			{
+				count += convert_to_binary(va_arg(args, unsigned int));
+			}
 			break;
 		}
 	}
