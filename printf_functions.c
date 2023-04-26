@@ -36,20 +36,28 @@ int print_string(char *s)
 
 int print_character(int idx, char *s)
 {
-	bool check_chars_1, check_chars_2;
-	int count = 0;
+	char check_letters[] = "csdbilfguoe%";
+	bool found = false;
+	int x, count = 0;
 
-	check_chars_1 = (s[idx] == 'c' || s[idx] == 's' || s[idx] == '%');
-	check_chars_2 = (s[idx] == 'd' || s[idx] == 'b' || s[idx] == 'i');
+	for (x = 0; check_letters[x] != '\0'; x++)
+	{
+		if (check_letters[x] == s[idx])
+		{
+			found = true;
+			break;
+		}
+	}
+
 	if (idx > 0)
 	{
-		if (s[idx - 1] == '%' && (!check_chars_1 && !check_chars_2))
+		if (s[idx - 1] == '%' && !(found || s[x] != '%'))
 		{
 			_putchar('%');
 			count = 1;
 		}
 		/** check so that we don't print any of the symbols */
-		if (!(s[idx - 1] == '%' && (check_chars_1 || check_chars_2)))
+		if (!(s[idx - 1] == '%' && (found)))
 		{
 			_putchar(s[idx]);
 			count = 1;
