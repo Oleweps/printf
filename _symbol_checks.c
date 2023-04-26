@@ -132,6 +132,7 @@ int print_values_for_symbols(type_format *symbols, char *symbol, va_list args)
 			{
 				count += _convert_to_binary(va_arg(args, unsigned int));
 			}
+			count += check_other_symbols(char *symbol_type, char *symbol, va_list args);
 			break;
 		}
 	}
