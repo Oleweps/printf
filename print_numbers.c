@@ -15,37 +15,41 @@ int print_number(long int num)
 	long int x, len = 0, tmp = num;
 	long int rev_n = 0;
 
-	if (num == 0)
+	if (num >= INT_MIN || num <= INT_MAX)
 	{
-		_putchar(num + '0');
-		return (1);
-	}
-	if (num < 0)
-	{
-		_putchar('-');
-		len++;
-	}
-	rev_n = reverse_number(num);
-	/** * print the number after reversing */
-	x = 0;
-	while (rev_n >= 1)
-	{
-		_putchar(((long int)rev_n % 10) + '0');
-		rev_n /= 10;
-		len += 1;
-		x++;
-	}
-	/** add 0 if the number had zeroes at the end */
-	if (tmp > 0)
-	{
-		while ((long int)tmp % 10 == 0)
+		if (num == 0)
 		{
-			_putchar(0 + '0');
-			tmp /= 10;
-			len += 1;
+			_putchar(num + '0');
+			return (1);
 		}
+		if (num < 0)
+		{
+			_putchar('-');
+			len++;
+		}
+		rev_n = reverse_number(num);
+		/** * print the number after reversing */
+		x = 0;
+		while (rev_n >= 1)
+		{
+			_putchar(((long int)rev_n % 10) + '0');
+			rev_n /= 10;
+			len += 1;
+			x++;
+		}
+		/** add 0 if the number had zeroes at the end */
+		if (tmp > 0)
+		{
+			while ((long int)tmp % 10 == 0)
+			{
+				_putchar(0 + '0');
+				tmp /= 10;
+				len += 1;
+			}
+		}
+		return (len);
 	}
-	return (len);
+	return (0);
 }
 
 /**
