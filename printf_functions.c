@@ -51,7 +51,7 @@ int print_character(int idx, char *s)
 	if (idx > 0)
 	{
 		/** check so that we don't print any of the symbols */
-		if(!(s[idx - 1] == '%' && found == true))
+		if (!(s[idx - 1] == '%' && found == true))
 		{
 			_putchar(s[idx]);
 			count = 1;
