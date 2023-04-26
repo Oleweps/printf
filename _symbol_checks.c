@@ -15,7 +15,8 @@ int check_alphabets(char *symbol_type, va_list args)
 
 	if (strcmp(symbol_type, "char") == 0)
 	{
-		count += _putchar(va_arg(args, int));
+		_putchar(va_arg(args, int));
+		count += 1;
 	}
 	if (strcmp(symbol_type, "string") == 0)
 	{
