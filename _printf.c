@@ -25,8 +25,16 @@ type_format *get_symbols(type_format symbols[])
 	symbols[4].symbol = "%i";
 	symbols[5].type = "binary";
 	symbols[5].symbol = "%b";
-	symbols[6].type = NULL;
-	symbols[6].symbol = NULL;
+	symbols[6].type = "unsigned_int";
+	symbols[6].symbol = "%u";
+	symbols[7].type = "octal";
+	symbols[7].symbol = "%o";
+	symbols[8].type = "hexidecimal";
+	symbols[8].symbol = "%x";
+	symbols[9].type = "hexidecimal";
+	symbols[9].symbol = "%X";
+	symbols[10].type = NULL;
+	symbols[10].symbol = NULL;
 
 	tmp = symbols;
 	return (tmp);
@@ -43,7 +51,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	unsigned int y, count = 0, len = _strlen(format);
 	char *symbol, *str;
-	type_format *symbols, tmp[7];
+	type_format *symbols, tmp[11];
 
 	symbols = get_symbols(tmp);
 	va_start(args, format);

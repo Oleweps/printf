@@ -5,51 +5,47 @@
 #include <string.h>
 
 /**
- * print_integer - function to print an integer in the terminal
+ * print_number - function to print an integer in the terminal
  * @num: number to be printed
  * Return: how many numbers were printed in the terminal
  */
 
-int print_integer(long int num)
+int print_number(long int num)
 {
 	long int x, len = 0, tmp = num;
 	long int rev_n = 0;
 
-	if (num >= INT_MIN && num <= INT_MAX)
+	if (num == 0)
 	{
-		if (num == 0)
-		{
-			_putchar(num + '0');
-			return (1);
-		}
-		if (num < 0)
-		{
-			_putchar('-');
-			len++;
-		}
-		rev_n = reverse_number(num);
-		/** * print the number after reversing */
-		x = 0;
-		while (rev_n >= 1)
-		{
-			_putchar(((long int)rev_n % 10) + '0');
-			rev_n /= 10;
-			len += 1;
-			x++;
-		}
-		/** add 0 if the number had zeroes at the end */
-		if (tmp > 0)
-		{
-			while ((long int)tmp % 10 == 0)
-			{
-				_putchar(0 + '0');
-				tmp /= 10;
-				len += 1;
-			}
-		}
-		return (len);
+		_putchar(num + '0');
+		return (1);
 	}
-	return (0);
+	if (num < 0)
+	{
+		_putchar('-');
+		len++;
+	}
+	rev_n = reverse_number(num);
+	/** * print the number after reversing */
+	x = 0;
+	while (rev_n >= 1)
+	{
+		_putchar(((long int)rev_n % 10) + '0');
+		rev_n /= 10;
+		len += 1;
+		x++;
+	}
+	/** add 0 if the number had zeroes at the end */
+	if (tmp > 0)
+	{
+		while ((long int)tmp % 10 == 0)
+		{
+			_putchar(0 + '0');
+			tmp /= 10;
+			len += 1;
+		}
+	}
+	return (len);
 }
 
 /**
