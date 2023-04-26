@@ -2,11 +2,7 @@
 #include <limits.h>
 #include <stdbool.h>
 #include <stddef.h>
-#include <stdarg.h>
 #include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-
 
 /**
  * print_integer - function to print an integer in the terminal

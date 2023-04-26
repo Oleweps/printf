@@ -18,9 +18,9 @@ typedef struct formats
 	char *symbol;
 } type_format;
 
+int _printf(const char *format, ...);
 int _putchar(int ch);
 int _strlen(const char *s);
-int _printf(const char *format, ...);
 int print_string(char *s);
 int print_integer(long int num);
 long int convert_negative_to_positive(long int n);

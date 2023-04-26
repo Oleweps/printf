@@ -1,8 +1,7 @@
+#include "main.h"
 #include <stdarg.h>
 #include <stdlib.h>
-#include "main.h"
 #include <string.h>
-#include <stdio.h>
 
 /**
  * get_symbols - function that intializes ,
