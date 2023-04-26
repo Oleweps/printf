@@ -118,7 +118,7 @@ int print_values_for_symbols(type_format *symbols, char *symbol, va_list args)
 
 unsigned int convert_to_binary(unsigned int num)
 {
-	unsigned int a[10], x, count = 0;
+	unsigned int a[100], x, count = 0;
 
 	/** we first divide the value by the 2 and store the remainder int a[]*/
 	for (x = 0; num > 0; x++)
