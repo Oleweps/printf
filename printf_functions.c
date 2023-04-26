@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <string.h>
+#include <stdlib.h>
 
 /**
  * print_string - function to print a string in terminal
@@ -118,7 +119,7 @@ int print_values_for_symbols(type_format *symbols, char *symbol, va_list args)
 
 unsigned int convert_to_binary(unsigned int num)
 {
-	unsigned int a[100], x, count = 0;
+	unsigned int a[1000], x, count = 0;
 
 	/** we first divide the value by the 2 and store the remainder int a[]*/
 	for (x = 0; num > 0; x++)
