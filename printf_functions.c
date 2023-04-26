@@ -122,24 +122,33 @@ int print_values_for_symbols(type_format *symbols, char *symbol, va_list args)
 
 unsigned int convert_to_binary(unsigned int num)
 {
-	unsigned int a[1000], x, count = 0;
+	int x, count = 0;
+	char *nums, *tmp;
 
+	nums = malloc(sizeof(char *) * 1);
+	if (nums == NULL)
+	{
+		return (0);
+	}
 	/** we first divide the value by the 2 and store the remainder int a[]*/
 	for (x = 0; num > 0; x++)
 	{
-		a[x] = (num % 2);
+		/** reallocate x + 1 bytes to array */
+		tmp = realloc(nums, sizeof(char) * (x + 1));
+		if (tmp)
+		{
+			nums = tmp;
+		}
+		nums[x] = ((num % 2) + '0');
 		num = num / 2;
 	}
-
-	for (x = (x - 1); ; x--)
+	nums[x] = '\0';
+	/** print number stored in nums string array */
+	for (x = (x - 1); nums[x - 1] != '\0'; x--)
 	{
-		if (x == 0)
-		{
-			_putchar(a[0] + '0');
-			break;
-		}
-		_putchar(a[x] + '0');
+		_putchar(nums[x]);
 		count++;
 	}
+	free(nums);
 	return (count);
 }
