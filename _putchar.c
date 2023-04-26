@@ -11,7 +11,11 @@
 
 int _putchar(int ch)
 {
-	char c = (char)ch;
+	if (ch > 0)
+	{
+		char c = (char)ch;
 
-	return (write(START, &c, 1));
+		return (write(START, &c, 1));
+	}
+	return (0);
 }
